@@ -1,5 +1,9 @@
 #### Imports et définition des variables globales
 
+# Mandatory for the recursive solution to work on large inputs
+import sys
+sys.setrecursionlimit(2000)
+
 
 #### Fonctions secondaires
 

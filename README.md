@@ -74,7 +74,7 @@ On peut penser à rechercher le nombre de caractères identiques au premier cara
 
 > [!TIP]
 Sur les listes, l'opérateur `+` permet de construire une nouvelle liste constituée des deux opérandes. Cette façon de faire est à privilégier. Attention, la méthode [`list.extend()`](https://docs.python.org/3/tutorial/datastructures.html#more-on-lists) modifie la liste sur place.
-  
+
 ## To do
 
 1️⃣ Ecrire (ou modifier) le code de la fonction secondaire.
