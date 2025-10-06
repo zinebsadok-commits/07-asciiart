@@ -9,37 +9,34 @@ sys.setrecursionlimit(2000)
 
 
 def artcode_i(s):
-    """retourne la liste de tuples encodant une chaîne de caractères passée en argument selon un algorithme itératif
+    if not s:  # chaîne vide
+        return []
 
-    Args:
-        s (str): la chaîne de caractères à encoder
+    C = [s[0]]  # liste des caractères
+    O = [1]     # occurrences
+    for k in range(1, len(s)):
+        if s[k] == s[k-1]:
+            O[-1] += 1
+        else:
+            C.append(s[k])
+            O.append(1)
+    return list(zip(C, O))
 
-    Returns:
-        list: la liste des tuples (caractère, nombre d'occurences)
-    """
-    
-    # votre code ici
-
-    return [ ]
 
 
 def artcode_r(s):
-    """retourne la liste de tuples encodant une chaîne de caractères passée en argument selon un algorithme récursif
+    if not s:
+        return []
 
-    Args:
-        s (str): la chaîne de caractères à encoder
+    first_char = s[0]
+    count = 1
+    # compter les caractères identiques au début
+    while count < len(s) and s[count] == first_char:
+        count += 1
 
-    Returns:
-        list: la liste des tuples (caractère, nombre d'occurences)
-    """
-    
-    # votre code ici
+    # créer le tuple et concaténer avec le résultat récursif
+    return [(first_char, count)] + artcode_r(s[count:])
 
-    # cas de base
-    # recherche nombre de caractères identiques au premier
-    # appel récursif
-
-    return []
     
 
 #### Fonction principale
